@@ -3,7 +3,7 @@ def credentials = new File('credentials.txt').text.split('\n\n')
 			def datum = it.split('\\s')
 			datum.collectEntries {
 				def item = it.split(':')
-				[item[0], item[1] as String]
+				[item[0], item[1]]
 			}
 		}
 
