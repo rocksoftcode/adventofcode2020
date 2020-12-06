@@ -1,7 +1,9 @@
 def tickets = new File('seats.txt').text.split('\n')
+def seatNumbers = []
+
 def topHalf = { range -> range.subList(0, Math.round(range.size() / 2) as int) }
 def bottomHalf = { range -> range.subList(Math.floor(range.size() / 2) as int, range.size()) }
-def seats = []
+def maxSeatId = 0
 tickets.each { code ->
 	def range = new ArrayList(0..127)
 	(0..6).each { i ->
@@ -15,8 +17,8 @@ tickets.each { code ->
 		if (code[i] == 'R') range = bottomHalf(range)
 	}
 	def seat = range[0]
-	seats << row * 8 + seat
+	maxSeatId = Math.max(maxSeatId, row * 8 + seat)
 }
-def seq = seats.min()..seats.max()
-println seq + seats - seats.intersect(seq)
+
+println maxSeatId
 
