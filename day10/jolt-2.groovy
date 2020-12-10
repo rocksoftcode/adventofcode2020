@@ -5,5 +5,5 @@ input.each {
 	def step = it + big(2)
 	cache[step] = cache[step - big(3)..step].sum()
 }
-print(cache.last())
+println cache.last()
 
