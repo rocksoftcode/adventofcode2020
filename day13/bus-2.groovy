@@ -15,7 +15,7 @@ def i = 0
 println offsets.inject(0 as long) { s, it ->
     def t = (it.v - it.i) * limits[i]
     while (t-- > 0) {
-        s = (s + limits[i]) % product
+        s = (s + results[i]) % product
     }
     i++
     return s
