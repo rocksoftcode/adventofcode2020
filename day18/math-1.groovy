@@ -31,6 +31,5 @@ println input.sum { eq ->
         }
         eq = eq.replace(r, solve(p))
     }
-    def solved = solve(eq)
-    new BigDecimal(solved)
+    new BigDecimal(solve(eq))
 }
