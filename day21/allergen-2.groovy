@@ -36,5 +36,3 @@ resAllergens.each {
 }
 
 println resAllergens.keySet().sort().collect { resAllergens[it] }.join(',')
-//
-// console.log(Object.keys(definedAllergens).sort().map(allergen => definedAllergens[allergen]).join(','));
