@@ -8,7 +8,7 @@ input.each {
     def ingredients = sides[0].split(' ')
     def currAllergens = sides[1].split(', ')
     currAllergens.each { a ->
-        if (allergens[a]) allergens[a] = ingredients.findAll { allergens[a] && allergens[a].contains(it) } as Set
+        if (allergens[a]) allergens[a] = ingredients.findAll { allergens[a].contains(it) } as Set
         else allergens[a] = ingredients as Set
     }
     ingredients.each {
