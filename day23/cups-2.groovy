@@ -10,8 +10,7 @@ def cup = input.substring(0, 1).toInteger()
     def t2 = cups[t1]
     def t3 = cups[t2]
     def dest = cup-1
-    if (dest <= 0)
-        dest = cups.size()-1
+    if (dest <= 0) dest = cups.size()-1
     while (dest == t1 || dest == t2 || dest == t3) {
         dest--
         if (dest <= 0) dest = cups.size()-1
